@@ -1,10 +1,10 @@
-const checkBtn = document.querySelector("check-palindrome");
+const checkBtn = document.querySelector("#check-palindrome");
 const outputEl = document.querySelector("#output");
-const dateInput = document.querySelector("bday-input")
+const dateInput = document.querySelector("#bday-input")
 
 function reverseStr(str){
     var listOfCharaters = str.split('');
-    var reverseListOfCharacters = listOfCharaters.revese()
+    var reverseListOfCharacters = listOfCharaters.reverse()
 
     var reverseStr = reverseListOfCharacters.join('');
 
@@ -13,30 +13,25 @@ function reverseStr(str){
 
 function isPalindrome(str){
     var reverse = reverseStr(str);
-
-    if(str === reverse){
-        outputEl.innerText = ("Your Birthday is a Palindrome!")
-    }else{
-        outputEl.innerText = ("Your Birthday is not a Palindrome!")
-    }
+    return str === reverse;
 
 }
 
 function convertDateToString(date){
     var dateStr = {day : '',month : '',year : ''}
-    if(dateStr.day < 10){
-        dateStr.date = '0' + date.day;
+    if(date.day < 10){
+        dateStr.day = '0' + date.day;
     }else{
         dateStr.day = date.day.toString();
     }
 
-    if(dateStr.month < 10){
+    if(date.month < 10){
         dateStr.month = '0' + date.month;
     }else{
         dateStr.month = date.month.toString();
     }
 
-    dateStr.year =date.year.toString();
+    dateStr.year = date.year.toString();
 
     return dateStr
 }
@@ -159,7 +154,8 @@ function clickHandler(e){
         }
         else{
             var [ctr,nextDate] = getNextPalindromeDate(date)
-            outputEl.innerText = 'The next palindrome is ${nextDate.days}-${nextDate.month}-${nextDate.year}, you missed it by ${ctr} days!'
+            outputEl.innerText = `The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${ctr} days!`;
+            
         }
     }
 }
