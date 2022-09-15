@@ -1,0 +1,25 @@
+body {
+    font-family: 'Kalam', cursive;
+    overflow: hidden;
+    text-align: center;
+    background-color: aqua;
+}
+
+#lable{
+    max-width: 600px;
+    margin: auto;
+    display: block;
+    font-size: large;
+    font-weight: 600;
+    color: black;
+    font-family:cursive;
+    font-size:25px;
+}
+
+#check-palindrome{
+    margin: auto;
+    border-radius: 0.5rem;
+    font-size: large;
+    cursor: pointer;
+    display: block;
+}
