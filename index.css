@@ -16,6 +16,13 @@ body {
     font-size:25px;
 }
 
+#bday-input{
+    margin: 15px;
+    height: 40px;
+    width: 200px;
+    font-size: 25px;
+}
+
 #check-palindrome{
     margin: auto;
     border-radius: 0.5rem;
